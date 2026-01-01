@@ -1,33 +1,52 @@
-# Advanced E-Commerce Analytics Using SQL (Olist)
+# Advanced E-Commerce Analytics Using SQL  
+*(Brazilian E-Commerce – Olist Dataset)*
 
-## 📌 Objective
-Analyze Brazilian e-commerce performance using advanced SQL techniques
-to uncover revenue trends, customer behavior, and seller performance.
+## 📌 Project Overview
+This project focuses on advanced SQL analysis to evaluate the performance of an e-commerce business using the **Brazilian E-Commerce Public Dataset by Olist**.  
+The analysis covers revenue trends, seller performance, customer segmentation, and delivery efficiency to support data-driven business decisions.
 
-## 🛠 Tools
-- SQL Server
-- PostgreSQL
-- Power BI
-- Kaggle Dataset
+This project is designed to demonstrate **advanced SQL capabilities** commonly required for **Data Analyst** and **Business Analyst** roles.
 
-## 📊 Business Questions
-- How does monthly revenue grow over time?
-- Who are the top-performing sellers?
-- Which customers are most valuable?
-- How efficient is delivery performance?
+---
 
-## 🧠 SQL Techniques Used
-- CTE
-- Window Functions
-- RANK / NTILE
-- Time Series Analysis
-- RFM Segmentation
+## 🎯 Objectives
+- Analyze monthly revenue trends and growth
+- Identify top-performing sellers using weighted metrics
+- Segment customers based on RFM (Recency, Frequency, Monetary)
+- Evaluate delivery performance and customer behavior
+- Apply advanced SQL techniques for real-world business cases
 
-## 🔑 Key Insights
-- Revenue shows strong seasonality in Q4
-- High-rated sellers do not always generate the highest revenue
-- 20% of customers contribute over 60% of total revenue
+---
 
-## 📈 Next Steps
-- Dashboard visualization in Power BI
-- Predictive analysis using Python
+## 🧰 Tools & Technologies
+- **SQL Server / PostgreSQL**
+- **Advanced SQL (CTE, Window Functions, Ranking)**
+- Power BI *(optional – for visualization)*
+- Dataset: Kaggle – Olist Brazilian E-Commerce
+
+---
+
+## 📂 Dataset Overview
+Main tables used in this project:
+- `orders`
+- `order_items`
+- `order_payments`
+- `order_reviews`
+- `customers`
+- `sellers`
+- `products`
+
+Dataset source:  
+🔗 Brazilian E-Commerce Public Dataset by Olist (Kaggle)
+
+---
+
+## 📊 Business Questions & Analysis
+
+### 1️⃣ Monthly Revenue Growth
+**Business Question:**  
+How does monthly revenue change over time, and what is the growth rate?
+
+**SQL Highlight (Window Function):**
+```sql
+LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
