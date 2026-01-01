@@ -37,7 +37,7 @@ Main tables used in this project:
 - `products`
 
 Dataset source:  
-🔗 Brazilian E-Commerce Public Dataset by Olist (Kaggle)
+🔗 [Brazilian E-Commerce Public Dataset by Olist (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 ---
 
@@ -50,3 +50,6 @@ How does monthly revenue change over time, and what is the growth rate?
 **SQL Highlight (Window Function):**
 ```sql
 LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
+```
+📄 Full query
+[02_monthly_revenue_growth.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/02_monthly_revenue_growth.sql)
