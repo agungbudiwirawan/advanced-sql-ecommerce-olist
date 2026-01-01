@@ -60,13 +60,15 @@ LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
 - Significant spikes occur toward the end of the year
 - Revenue decline observed after peak seasons
 
-###2️⃣ Seller Performance Ranking
+### 2️⃣ Seller Performance Ranking
 **Business Question:**
 Which sellers perform best when considering both revenue and customer reviews?
+
 **Approach:**
 Weighted score combining:
 -Revenue (60%)
 -Average review score (40%)
+
 **SQL Highlight (Window Function):**
 ```sql
 RANK() OVER (
@@ -76,3 +78,93 @@ RANK() OVER (
 📄 Full query
 
 [03_seller_ranking.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/03_seller_ranking.sql)
+
+3️⃣ Customer Segmentation (RFM Analysis)
+
+Business Question:
+Who are the most valuable customers?
+
+Metrics Used:
+
+Recency: last purchase date
+
+Frequency: total number of orders
+
+Monetary: total spending
+
+SQL Highlight:
+
+NTILE(5) OVER (ORDER BY monetary DESC) AS monetary_score
+
+
+📄 Full query:
+➡️ sql/04_rfm_segmentation.sql
+
+Key Insights:
+
+A small percentage of customers contribute the majority of revenue
+
+High-RFM customers are ideal targets for retention campaigns
+
+4️⃣ Delivery Performance Analysis
+
+Business Question:
+How efficient is the delivery process?
+
+📄 Full query:
+➡️ sql/05_delivery_performance.sql
+
+Key Insights:
+
+Faster delivery correlates with higher review scores
+
+Late deliveries negatively impact customer satisfaction
+
+5️⃣ Repeat Customer Rate
+
+Business Question:
+How many customers place more than one order?
+
+📄 Full query:
+➡️ sql/06_repeat_customer.sql
+
+Key Insights:
+
+Repeat customers represent a critical revenue segment
+
+Customer retention offers strong growth opportunities
+
+🧠 SQL Techniques Used
+
+Common Table Expressions (CTE)
+
+Window Functions (LAG, RANK, NTILE)
+
+Time Series Analysis
+
+Aggregations & Conditional Logic
+
+Business-oriented query design
+
+📈 Key Business Insights (Summary)
+
+Revenue is highly seasonal with strong end-of-year peaks
+
+Seller performance should be evaluated beyond revenue alone
+
+A small group of customers drives a large share of total revenue
+
+Delivery speed plays a significant role in customer satisfaction
+
+🚀 Future Enhancements
+
+Build interactive dashboards using Power BI
+
+Perform cohort and retention analysis
+
+Extend analysis using Python for predictive modeling
+
+👤 Author
+
+Agung Budi Wirawan
+Aspiring Data Analyst | SQL • Power BI • Python
