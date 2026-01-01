@@ -52,4 +52,27 @@ How does monthly revenue change over time, and what is the growth rate?
 LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
 ```
 📄 Full query
+
 [02_monthly_revenue_growth.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/02_monthly_revenue_growth.sql)
+
+**Key Insights:**
+- Revenue shows clear seasonality
+- Significant spikes occur toward the end of the year
+- Revenue decline observed after peak seasons
+
+###2️⃣ Seller Performance Ranking
+**Business Question:**
+Which sellers perform best when considering both revenue and customer reviews?
+**Approach:**
+Weighted score combining:
+-Revenue (60%)
+-Average review score (40%)
+**SQL Highlight (Window Function):**
+```sql
+RANK() OVER (
+    ORDER BY (revenue * 0.6 + avg_review * 0.4) DESC
+) AS seller_rank
+```
+📄 Full query
+
+[03_seller_ranking.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/03_seller_ranking.sql)
