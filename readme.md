@@ -79,56 +79,49 @@ RANK() OVER (
 
 [03_seller_ranking.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/03_seller_ranking.sql)
 
-3️⃣ Customer Segmentation (RFM Analysis)
+### 3️⃣ Customer Segmentation (RFM Analysis)
 
-Business Question:
+**Business Question:**
 Who are the most valuable customers?
 
-Metrics Used:
+**Metrics Used:**
+- Recency: last purchase date
+- Frequency: total number of orders
+- Monetary: total spending
 
-Recency: last purchase date
-
-Frequency: total number of orders
-
-Monetary: total spending
-
-SQL Highlight:
-
+**SQL Highlight:**
+```sql
 NTILE(5) OVER (ORDER BY monetary DESC) AS monetary_score
-
+```
 
 📄 Full query:
-➡️ sql/04_rfm_segmentation.sql
+➡️ [04_rfm_segmentation.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/04_rfm_segmentation.sql)
 
-Key Insights:
+**Key Insights:**
+- A small percentage of customers contribute the majority of revenue
+- High-RFM customers are ideal targets for retention campaigns
 
-A small percentage of customers contribute the majority of revenue
+### 4️⃣ Delivery Performance Analysis
 
-High-RFM customers are ideal targets for retention campaigns
-
-4️⃣ Delivery Performance Analysis
-
-Business Question:
+**Business Question:**
 How efficient is the delivery process?
 
 📄 Full query:
 ➡️ sql/05_delivery_performance.sql
 
-Key Insights:
+**Key Insights:**
+- Faster delivery correlates with higher review scores
+- Late deliveries negatively impact customer satisfaction
 
-Faster delivery correlates with higher review scores
+### 5️⃣ Repeat Customer Rate
 
-Late deliveries negatively impact customer satisfaction
-
-5️⃣ Repeat Customer Rate
-
-Business Question:
+**Business Question:**
 How many customers place more than one order?
 
 📄 Full query:
 ➡️ sql/06_repeat_customer.sql
 
-Key Insights:
+**Key Insights:**
 
 Repeat customers represent a critical revenue segment
 
