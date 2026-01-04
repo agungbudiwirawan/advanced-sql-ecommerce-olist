@@ -122,42 +122,31 @@ How many customers place more than one order?
 ➡️ sql/06_repeat_customer.sql
 
 **Key Insights:**
+- Repeat customers represent a critical revenue segment
+- Customer retention offers strong growth opportunities
 
-Repeat customers represent a critical revenue segment
+## 🧠 SQL Techniques Used
 
-Customer retention offers strong growth opportunities
+- Common Table Expressions (CTE)
+- Window Functions (LAG, RANK, NTILE)
+- Time Series Analysis
+- Aggregations & Conditional Logic
+- Business-oriented query design
 
-🧠 SQL Techniques Used
+## 📈 Key Business Insights (Summary)
+- Revenue is highly seasonal with strong end-of-year peaks
+- Seller performance should be evaluated beyond revenue alone
+- A small group of customers drives a large share of total revenue
+- Delivery speed plays a significant role in customer satisfaction
 
-Common Table Expressions (CTE)
+## 🚀 Future Enhancements
 
-Window Functions (LAG, RANK, NTILE)
+- Build interactive dashboards using Power BI
+- Perform cohort and retention analysis
 
-Time Series Analysis
 
-Aggregations & Conditional Logic
-
-Business-oriented query design
-
-📈 Key Business Insights (Summary)
-
-Revenue is highly seasonal with strong end-of-year peaks
-
-Seller performance should be evaluated beyond revenue alone
-
-A small group of customers drives a large share of total revenue
-
-Delivery speed plays a significant role in customer satisfaction
-
-🚀 Future Enhancements
-
-Build interactive dashboards using Power BI
-
-Perform cohort and retention analysis
-
-Extend analysis using Python for predictive modeling
-
-👤 Author
+## 👤 Author
 
 Agung Budi Wirawan
-Aspiring Data Analyst | SQL • Power BI • Python
+
+Aspiring Data Analyst
