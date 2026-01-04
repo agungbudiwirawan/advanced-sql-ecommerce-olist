@@ -95,6 +95,7 @@ NTILE(5) OVER (ORDER BY monetary DESC) AS monetary_score
 ```
 
 📄 Full query:
+
 ➡️ [04_rfm_segmentation.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/04_rfm_segmentation.sql)
 
 **Key Insights:**
@@ -107,7 +108,8 @@ NTILE(5) OVER (ORDER BY monetary DESC) AS monetary_score
 How efficient is the delivery process?
 
 📄 Full query:
-➡️ sql/05_delivery_performance.sql
+
+➡️ [05_delivery_performance.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/05_delivery_performance.sql)
 
 **Key Insights:**
 - Faster delivery correlates with higher review scores
@@ -119,7 +121,8 @@ How efficient is the delivery process?
 How many customers place more than one order?
 
 📄 Full query:
-➡️ sql/06_repeat_customer.sql
+
+➡️ 06_repeat_customer.sql
 
 **Key Insights:**
 - Repeat customers represent a critical revenue segment
