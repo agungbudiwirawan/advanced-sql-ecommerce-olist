@@ -66,15 +66,24 @@ Which sellers perform best when considering both revenue and customer reviews?
 
 **Approach:**
 Weighted score combining:
--Revenue (60%)
--Average review score (40%)
+- Revenue (60%)
+- Average review score (40%)
+
+Both metrics are first converted to the same 0-1 scale with `PERCENT_RANK()`, and only sellers with 30+ orders are ranked.
 
 **SQL Highlight (Window Function):**
 ```sql
-RANK() OVER (
-    ORDER BY (revenue * 0.6 + avg_review * 0.4) DESC
-) AS seller_rank
+0.6 * PERCENT_RANK() OVER (ORDER BY revenue)
+  + 0.4 * PERCENT_RANK() OVER (ORDER BY avg_review) AS weighted_score
 ```
+
+**Why v2:**
+The first version used `revenue * 0.6 + avg_review * 0.4` on raw values. Revenue is in thousands of BRL while reviews are 1-5, so the review weight had no effect and the ranking matched a pure revenue ranking exactly.
+
+**Key Insights:**
+- After normalizing, only 1 of the top 10 revenue sellers stays in the top 10 (628 sellers with 30+ orders)
+- Average review of the top 10 rises from 4.01 to 4.45
+- The top 20% of sellers generate about 83% of revenue
 📄 Full query
 
 [03_seller_ranking.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/03_seller_ranking.sql)
@@ -122,11 +131,11 @@ How many customers place more than one order?
 
 📄 Full query:
 
-➡️ 06_repeat_customer.sql
+➡️ [06_repeat_customer.sql](https://github.com/agungbudiwirawan/advanced-sql-ecommerce-olist/blob/main/sql/06_repeat_customer.sql)
 
 **Key Insights:**
-- Repeat customers represent a critical revenue segment
-- Customer retention offers strong growth opportunities
+- Only 3.0% of customers (2,801 of 93,358 with delivered orders) placed more than one order
+- Winning the second order is the biggest retention opportunity
 
 ## 🧠 SQL Techniques Used
 
